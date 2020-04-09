@@ -1,0 +1,6 @@
+{% extends "Blog/blog.html" %}
+{% block content %}
+    {% for post in posts %}
+        <h2>Date Published On {{ post.date_published }}</h2>
+    {% endfor %}
+{% endblock content%}
