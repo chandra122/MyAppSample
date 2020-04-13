@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, Person1
 
 posts = [
     {
@@ -17,6 +17,18 @@ posts = [
     },
 ]
 
+personstext = [
+    {
+        'name' : 'sekhar',
+        'shirt_size' : 'L'
+    },
+    {
+        'name' : 'chandran',
+        'shirt_size' : 'M'
+    },
+
+]
+
 def home(request):
     context = {
         'posts':Post.objects.all()
@@ -28,3 +40,13 @@ def about(request):
         'posts':posts
     }
     return render(request,'Blog/about.html',context)
+
+def example(request):
+    person = Person1.objects.create(name="Fred Flintstone", shirt_size="L")
+    result = Person1.objects.all();
+    print(result)
+
+    context = {
+        'persons' : result
+    }
+    return render(request,'Blog/about1.html',context)
