@@ -1,0 +1,6 @@
+{% extends "Blog/blog.html" %}
+{% block content %}
+    {% for person in result %}
+        <h2>Date Published On {{ person.name }}</h2>
+    {% endfor %}
+{% endblock content%}

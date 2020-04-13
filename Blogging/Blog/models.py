@@ -11,3 +11,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class Person1(models.Model):
+
+    name = models.CharField(max_length=60)
+    SHIRT_SIZES = (
+        ('S', 'Small'),
+        ('M', 'Medium'),
+        ('L', 'Large'),
+    )
+    shirt_size = models.CharField(max_length=1, choices=SHIRT_SIZES)
